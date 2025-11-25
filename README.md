@@ -17,4 +17,6 @@ Features
 git clone https://github.com/Herbertcpp/Go-Backend-Server
 ```
 ### Install Go dependencies 
+```bash
 go tidy
+```
