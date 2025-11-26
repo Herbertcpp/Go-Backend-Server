@@ -27,9 +27,21 @@ After running the server with "go run server.go" you have following URLs avaviab
   - Expects: 
   application/json
   {"username" : string, "password", string}
-  - Returns 
+  - Returns:
   application/json
   {"success" : bool, "message" : string}
 
+### Authenticate a User:
+  - http://localhost:8080/authenticate
+    - Expects 
+    application/json
+    {"username" : string, "password", string}
+    - Returns 
+    application/json 
+    {"success" bool, "message" : string}
+
+
 ### print all the currently registered users (Mostly for testing purposes)
 - http://localhost:8080/print 
+  - Expects: nothing
+  - Returns: into the writer
