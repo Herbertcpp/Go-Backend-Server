@@ -12,11 +12,24 @@ Features
 
 ## Usage 
 
-### Clone the repository onto your machine with:
+### Clone the repository onto your machine and add dependencies with:
 ```
 git clone https://github.com/Herbertcpp/Go-Backend-Server
+cd Go-Backend-Server
+go mod tidy
 ```
-### Install Go dependencies 
-```bash
-go tidy
-```
+
+## Communication
+After running the server with "go run server.go" you have following URLs avaviable
+
+### Add a user 
+- http://localhost:8080/register 
+  - Expects: 
+  application/json
+  {"username" : string, "password", string}
+  - Returns 
+  application/json
+  {"success" : bool, "message" : string}
+
+### print all the currently registered users (Mostly for testing purposes)
+- http://localhost:8080/print 
