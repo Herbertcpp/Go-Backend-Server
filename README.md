@@ -20,7 +20,7 @@ go mod tidy
 ```
 
 ## Communication
-After running the server with "go run server.go" you have following URLs avaviable
+## After running the server with "go run server.go" you have following URLs avaviable
 
 ### Add a user 
 - http://localhost:8080/register 
@@ -33,10 +33,10 @@ After running the server with "go run server.go" you have following URLs avaviab
 
 ### Authenticate a User:
   - http://localhost:8080/authenticate
-    - Expects 
+    - Expects:
     application/json
     {"username" : string, "password", string}
-    - Returns 
+    - Returns:
     application/json 
     {"success" bool, "message" : string}
 
