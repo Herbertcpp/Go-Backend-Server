@@ -44,4 +44,4 @@ go mod tidy
 ### print all the currently registered users (Mostly for testing purposes)
 - http://localhost:8080/print 
   - Expects: nothing
-  - Returns: into the writer
+  - Returns: application/json {"name" : "password"}

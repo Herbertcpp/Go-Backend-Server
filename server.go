@@ -156,6 +156,9 @@ func initDataBase(db *sql.DB) {
 }
 
 func saveToDataBase(db *sql.DB, username string, password string) bool {
+	if strings.TrimSpace(username) == "" {
+		return false
+	}
 	hashed, hashErr := bcrypt.GenerateFromPassword([]byte(password), 10)
 	if hashErr != nil {
 		fmt.Println("Error hashing the password")
@@ -179,13 +182,22 @@ func printDataBase(db *sql.DB, w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		w.Write([]byte("Error reading users"))
 	}	
+
 	var username, password string
+	var mapped = make(map[string]string)
+
 	for rows.Next() {
 		ScanErr := rows.Scan(&username, &password)
 		if ScanErr != nil {
 			fmt.Println("Error reading line from database")
 		}
-		w.Write([]byte("User: " + username + " " + password + "\n"))
+		mapped[username] = password
+	}
+	newEncoder := json.NewEncoder(w)
+	newEncoder.SetIndent("", " ")
+	sendingErr := newEncoder.Encode(mapped)
+	if sendingErr != nil {
+		fmt.Println("Issue sending data to the client!")
 	}
 }
 
