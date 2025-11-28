@@ -20,7 +20,7 @@ go mod tidy
 ```
 
 ## Communication
-## After running the server with "go run server.go" you have following URLs avaviable
+### After running the server with "go run server.go" you have following URLs avaviable
 
 ### Add a user 
 - http://localhost:8080/register 
@@ -45,3 +45,8 @@ go mod tidy
 - http://localhost:8080/print 
   - Expects: nothing
   - Returns: application/json {"name" : "password"}
+
+## There also is a "testServer.go" script which you can run and test the server so you don't need to curl manually
+``
+go run testServer.go
+``
