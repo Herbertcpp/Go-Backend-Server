@@ -47,6 +47,6 @@ go mod tidy
   - Returns: application/json {"name" : "password"}
 
 ## There also is a "testServer.go" script which you can run and test the server so you don't need to curl manually
-``
+```
 go run testServer.go
-``
+```
